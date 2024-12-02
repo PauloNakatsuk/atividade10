@@ -1,12 +1,17 @@
 import MyComponent from './Components/MyComponent.jsx'; // Adjust the path if necessary
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
 
 function ProductCategoryRow({ category }) {
   return (
-    <tr>
-      <th colSpan="2">
+    <TableRow>
+      <TableCell>
         {category}
-      </th>
-    </tr>
+      </TableCell>
+    </TableRow>
   );
 }
 
@@ -17,10 +22,10 @@ function ProductRow({ product }) {
     </span>;
 
   return (
-    <tr>
-      <td>{name}</td>
-      <td>{product.price}</td>
-    </tr>
+    <TableRow>
+      <TableCell>{name}</TableCell>
+      <TableCell>{product.price}</TableCell>
+    </TableRow>
   );
 }
 
@@ -45,15 +50,15 @@ function ProductTable({ products }) {
   });
 
   return (
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Price</th>
-        </tr>
-      </thead>
-      <tbody>{rows}</tbody>
-    </table>
+    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+      <TableHead>
+        <TableRow>
+          <TableCell>Name</TableCell>
+          <TableCell>Price</TableCell>
+        </TableRow>
+      </TableHead>
+      <TableBody>{rows}</TableBody>
+    </Table>
   );
 }
 

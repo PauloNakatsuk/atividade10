@@ -1,8 +1,8 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom'; 
-import './index.css';
 import App from './App';
+//import Appx from './Components/Appx';
 import Rotas from  './Components/Rotas';
 import reportWebVitals from './reportWebVitals';
 
